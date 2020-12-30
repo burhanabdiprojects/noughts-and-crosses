@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="naccss.css"> 
+    <meta charset="UTF-8">
+    <title>Noughts and Crosses Champion</title>
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+<div id="pageheader">
+    <img src="img/logoplaceholder.png">
+</div>
+
+<div id="intro" class="slide">
+    <p>Welcome to the game!</p>
+    <button id="begingame" class="slidebtn" onclick="begin()">Start</button>
+</div>
+
+
+<div id="roundschoose" class="slide">
+    <p>How many rounds do you want to play?</p>
+
+    <div class="buttonbatch">
+        <button id="oneround" class="slidebtn" onclick="roundschoose(1)">Best of 1</button>   
+        <button id="threerounds" class="slidebtn" onclick="roundschoose(3)">Best of 3</button>
+        <button id="fiverounds" class="slidebtn" onclick="roundschoose(5)">Best of 5</button>
+    </div>
+</div>
+
+<div id="headsortails" class="slide">
+    <p>Player 1 - Choose Heads or Tails</p>
+
+    <div class="buttonbatch">
+        <button id="heads" class="slidebtn" onclick="headsortails('heads')">Heads</button>   
+        <button id="tails" class="slidebtn" onclick="headsortails('tails')">Tails</button>
+    </div>
+
+</div>
+
+<div id="ordernotif" class="slide">
+</div>
+
+<div id="icon" class="slide">
+    <p id="iconchoice"></p>
+
+    <div class="buttonbatch">
+        <button id="noughts" class="slidebtn" onclick="startGame('noughts', 'crosses')">Noughts</button>   
+        <button id="crosses" class="slidebtn" onclick="startGame('crosses', 'noughts')">Crosses</button>
+    </div>
+</div>
+
+
+<div id="board" class="board">
+    <a id="topa" onclick="topaclick()" class="boardsection">
+       <img src="img/x.png" id="topacross">
+       <img src="img/o.png" id="topanought">
+       <img src="img/xw.jpg" id="topaxw">
+       <img src="img/nw.jpg" id="topanw">
+    </a>
+
+    <div id="topb" onclick="topbclick()" class="boardsection">
+        <img src="img/x.png" id="topbcross">
+        <img src="img/o.png" id="topbnought">
+        <img src="img/xi.jpg" id="topbxi">
+        <img src="img/xw.jpg" id="topbxw">
+        <img src="img/ni.jpg" id="topbni">
+        <img src="img/nw.jpg" id="topbnw">
+    </div>
+
+    <div id="topc" onclick="topcclick()" class="boardsection">
+        <img src="img/x.png" id="topccross">
+        <img src="img/o.png" id="topcnought">
+        <img src="img/xn.jpg" id="topcxn">
+        <img src="img/xw.jpg" id="topcxw">
+        <img src="img/nn.jpg" id="topcnn">
+        <img src="img/nw.jpg" id="topcnw">
+    </div>
+
+    <div id="mida" onclick="midaclick()" class="boardsection">
+        <img src="img/x.png" id="midacross">
+        <img src="img/o.png" id="midanought">
+        <img src="img/xw.jpg" id="midaxw">
+        <img src="img/xi.jpg" id="midaxi"> 
+        <img src="img/nw.jpg" id="midanw">
+        <img src="img/ni.jpg" id="midani"> 
+    </div>
+
+    <div id="midb" onclick="midbclick()" class="boardsection">
+        <img src="img/x.png" id="midbcross">
+        <img src="img/o.png" id="midbnought">   
+        <img src="img/xi.jpg" id="midbxi">
+        <img src="img/ni.jpg" id="midbni"> 
+    </div>
+
+    <div id="midc" onclick="midcclick()" class="boardsection">
+        <img src="img/x.png" id="midccross">
+        <img src="img/o.png" id="midcnought">  
+        <img src="img/xn.jpg" id="midcxn"> 
+        <img src="img/xi.jpg" id="midcxi"> 
+        <img src="img/nn.jpg" id="midcnn">
+        <img src="img/ni.jpg" id="midcni">
+    </div>
+
+    <div id="bota" onclick="botaclick()" class="boardsection">
+        <img src="img/x.png" id="botacross">
+        <img src="img/o.png" id="botanought">
+        <img src="img/xw.jpg" id="botaxw">
+        <img src="img/xn.jpg" id="botaxn">
+        <img src="img/nw.jpg" id="botanw">
+        <img src="img/nn.jpg" id="botann">
+    </div>
+
+    <div id="botb" onclick="botbclick()" class="boardsection">
+        <img src="img/x.png" id="botbcross">
+        <img src="img/o.png" id="botbnought">
+        <img src="img/xi.jpg" id="botbxi"> 
+        <img src="img/xn.jpg" id="botbxn"> 
+        <img src="img/ni.jpg" id="botbni">
+        <img src="img/nn.jpg" id="botbnn"> 
+    </div>
+
+    <div id="botc" onclick="botcclick()" class="boardsection">
+        <img src="img/x.png" id="botccross">
+        <img src="img/o.png" id="botcnought"> 
+        <img src="img/xn.jpg" id="botcxn">  
+        <img src="img/nn.jpg" id="botcnn">   
+    </div>
+</div>
+
+<div id="gamestats">
+    <p id="turn"></p>
+</div>
+
+<div id="endgame" class="slide">
+
+</div>
+
+
+<script src="nacjs.js"></script>
+
+
+</body>
+
+</html>

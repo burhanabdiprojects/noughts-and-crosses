@@ -1,0 +1,170 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+background-color:white;
+}
+
+p{
+font-family: montserrat;
+}
+
+#pageheader {
+display: flex;
+justify-content: center;
+margin: 20px 0 40px;
+}
+
+.board {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-rows: auto;
+grid-gap: 3px;
+background-color: black;
+width: 300px;
+height: 300px;
+margin: 40px auto;
+}
+
+.boardsection {
+background-color: white; 
+height: 100px;
+width: 100px;
+cursor: pointer; 
+}
+
+@media (max-width: 800px){
+.slide{
+display: flex;
+width: 60%;
+margin: 10px auto;
+height: auto;
+flex-wrap: wrap;
+justify-content: center;
+align-content: center;
+background-color: white;
+border-radius: 5px;
+height: 200px;
+}
+
+.slide p{
+width: 100%;
+text-align: center;
+margin: 10px 0;
+}
+
+.slidebtn {
+display: flex;
+width: auto;
+padding: 6px;
+height: auto;
+margin: 5px;
+background-color:red;
+color: white;
+border-radius: 5%;
+border: none;
+cursor: pointer;
+font-weight: bold;
+}
+
+#gamestats{
+display: none;
+justify-content: center;
+align-content: center;
+width: 50%;
+margin: 10px auto;
+height: auto;
+padding: 8px;
+background-color: white;
+border-radius: 3px;
+}
+}
+
+@media (min-width: 800px){
+
+.slide{
+display: flex;
+width: 50%;
+margin: 10px auto;
+height: auto;
+flex-wrap: wrap;
+justify-content: center;
+align-content: center;
+background-color: white;
+border-radius: 5px;
+height: 200px;
+}
+
+.slide p{
+width: 100%;
+text-align: center;
+margin: 10px 0;
+}
+
+.slidebtn {
+display: flex;
+width: auto;
+padding: 6px;
+height: auto;
+margin: 5px;
+background-color:red;
+color: white;
+border-radius: 5%;
+border: none;
+cursor: pointer;
+font-weight: bold;
+}
+
+#gamestats{
+display: none;
+justify-content: center;
+align-content: center;
+width: 15%;
+margin: 10px auto;
+height: auto;
+padding: 8px;
+background-color: white;
+border-radius: 3px;
+}
+
+}
+
+.buttonbatch {
+width: 100%;
+display: flex;
+justify-content: center;
+}
+
+#topa {
+grid-column: 1 / 2;
+}
+
+#topb {
+grid-column: 2 / 3;
+}
+
+#topc {
+grid-column: 3 / -1;
+}
+
+#roundschoose, #headsortails, #topacross, #topanought, #topbcross, #topbnought, #topccross, #topcnought, #midacross, #midanought, #midbcross, 
+#midbnought, #midccross, #midcnought, #botacross, #botanought, #botbcross, #botbnought, #botccross, #botcnought, #ordernotif, #icon, 
+#endgame, #gamestats, #topaxw, #topbxi, #topcxn, #midaxw, #midbxi, #midcxn, #botaxw, #botbxi, #botcxn, #midaxi, #botaxn,
+#botbxn, #topbxw, #midcxi, #topcxw, #topanw, #topbni, #topcnn, #midanw, #midbni, #midcnn, #botanw, #botbni, #botcnn, #midani, #botann, #topbnw,
+#botbnn, #topcnw, #midcni {
+display: none;
+}
+
+
+#board {
+display: none;
+}
+
+
+
+
+
+
