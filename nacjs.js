@@ -45,7 +45,6 @@ on the score. */
 }
 
 function headsortails(c) { /* Player one chooses whether they wanna be heads or tails for the coin toss */
-/*remember to have if statement depending on type */
     document.getElementById("headsortails").style.display = "none";
 
     if (c == "heads"){
@@ -618,7 +617,7 @@ function showwin(a,b,c,aniw,anii,anin,ic,winner){
 }
 
 function boardcheck() {
-/*Run this after every single board click. Declare winner at the end. Remember to add something for a draw too!!!! */
+/*Run this after every single board click. Winner declarded at the end.*/
 if (topa[1] == "crosses" && topb[1] == "crosses" && topc[1] == "crosses"){
     if(player1.icon == "crosses"){
         victor = "player1";
