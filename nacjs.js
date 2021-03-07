@@ -29,22 +29,27 @@ var rounds;
 var roundscompleted = 0;
 var victor;
 
+
+/* Players begin the process of setting up the game */
+
 function begin() { 
-/* Type of game, either playervsplayer or playervscomputer. User selects this on first screen. */
+
     document.getElementById("intro").style.display = "none";
-    document.getElementById("roundschoose").style.display = "flex"; /* change this to flex later when redesigning */
+    document.getElementById("roundschoose").style.display = "flex"; 
 }
 
+/* Players set number of rounds */
 
 function roundschoose(b) {
-/* Select the number of rounds for the game. This will, when a win is triggered, either restart the game or declare the winner depending 
-on the score. */
+
     document.getElementById("roundschoose").style.display = "none";
     rounds = b;
     document.getElementById("headsortails").style.display = "flex";
 }
 
-function headsortails(c) { /* Player one chooses whether they wanna be heads or tails for the coin toss */
+/* Player one chooses whether they wanna be heads or tails for the coin toss */
+
+function headsortails(c) { 
     document.getElementById("headsortails").style.display = "none";
 
     if (c == "heads"){
@@ -72,6 +77,8 @@ function gamestats() {
 var rand;
 var nextbutton;
 
+/* Random coin toss to choose who goes first */
+
 function cointoss (){
 rand = Math.random();
 rand *= 10;
@@ -83,9 +90,11 @@ nextbutton.onclick = function () {chooseicon()};
 nextbutton.innerHTML = "Next";
 
 if(rand >= 5){
+
     /* Heads wins, find out who is heads and they go first */
+
     if (player1.toss == "heads"){
-        console.log("player1 wins the toss");
+
         player1.order = 1;
         player2.order = 2;
 
@@ -103,7 +112,7 @@ if(rand >= 5){
         
 
     }else if (player2.toss == "heads"){
-        console.log("player2 wins the toss");
+   
         player1.order = 2;
         player2.order = 1;  
         
@@ -122,9 +131,11 @@ if(rand >= 5){
     
     }
 }else if (rand < 5){
+
     /* Tails wins, find out who is heads and they go first */
+
     if (player1.toss == "tails"){
-        console.log("player1 wins the toss");
+     
         player1.order = 1;
         player2.order = 2;
         
@@ -142,7 +153,7 @@ if(rand >= 5){
         
 
     }else if (player2.toss == "tails"){
-        console.log("player2 wins the toss");
+      
         player1.order = 2;
         player2.order = 1;  
         
@@ -192,7 +203,7 @@ function startGame(icon, oppoicon) {
         player1.icon = oppoicon;
     }    
 
-    console.log("Player1 is " + player1.icon + " and Player2 is " + player2.icon);
+    
     document.getElementById("board").style.display = "grid";
     document.getElementById("gamestats").style.display = "flex";
 
@@ -201,6 +212,8 @@ function startGame(icon, oppoicon) {
 
 
 }
+
+/* Functions that run on click for each of the 9 tiles respectively*/
 
 function topaclick() {
 
@@ -237,7 +250,7 @@ if(topa[0] != "closed"){
         boardcheck();
         gamestats();
 
-    }else{console.log("nothing fits here");}
+    }else{}
 
     
 }else {}
@@ -281,7 +294,7 @@ function topbclick() {
     
         }else{}
     
-    }else {console.log("nothing fits here");}
+    }else {}
         
 }
     
@@ -410,8 +423,6 @@ function midaclick() {
     }
         
     function midcclick() {
-    
-        console.log("ran");
         
         if(midc[0] != "closed"){
            if(turn == "p1" && player1.icon == "noughts"){
@@ -448,7 +459,7 @@ function midaclick() {
         
             }else{}
         
-            console.log(midc);
+            
         }else {}
             
     }
@@ -456,8 +467,6 @@ function midaclick() {
 
 
 function botaclick() {
-
-    console.log("ran");
     
     if(bota[0] != "closed"){
        if(turn == "p1" && player1.icon == "noughts"){
@@ -617,7 +626,9 @@ function showwin(a,b,c,aniw,anii,anin,ic,winner){
 }
 
 function boardcheck() {
-/*Run this after every single board click. Winner declarded at the end.*/
+
+/*Runs after every single board click, checking to see for a winner.*/
+
 if (topa[1] == "crosses" && topb[1] == "crosses" && topc[1] == "crosses"){
     if(player1.icon == "crosses"){
         victor = "player1";
@@ -766,7 +777,7 @@ if (topa[1] == "crosses" && topb[1] == "crosses" && topc[1] == "crosses"){
         showwin("topanought","midbnought","botcnought","topanw","midbni","botcnn","noughts", "Player 2");
 
         }
-    console.log("gameover");
+    
 }else if(topc[1] == "noughts" && midb[1] == "noughts" && bota[1] == "noughts"){
     if(player1.icon == "noughts"){
         victor = "player1";
@@ -790,6 +801,8 @@ gameover(null, "draw");
 var announcewinner;
 var playagain;
 var announceoverallwinner;
+
+/* If winning conditions are met, this function declares the winner */
 
 function gameover(icon, winner) {
 
@@ -834,7 +847,6 @@ if (roundscompleted >= rounds){
         announceoverallwinner = document.createElement("p");
         announceoverallwinner.innerHTML = "Player 1 Wins The Game";
         document.getElementById("endgame").appendChild(announceoverallwinner);
-        console.log("rounds completed worked.");
     }else if(player2.score > player1.score){
         /*player 2 wins */
         announceoverallwinner = document.createElement("p");
@@ -866,8 +878,10 @@ contgame();
 var cont;
 var contbtn;
 
-function contgame() {
 /*continue the game */
+
+function contgame() {
+
 cont = document.createElement("p");
 document.getElementById("endgame").appendChild(cont);
 cont.innerHTML = "Continue to the next game.";
@@ -879,6 +893,8 @@ contbtn.innerHTML = "Next Game";
 contbtn.classList.add("slidebtn");
 contbtn.onclick = function () {nextround()};
 }
+
+/* In games where there are more than one round, this cleans up the board for the next round */
 
 function nextround() {
     victor = "";
@@ -954,7 +970,7 @@ function nextround() {
 
 
 function restart() {
-/* Button to restart the game, just have everything reset and open up the first slide.   */
+/* Restarts games and clears everything if users decide to start a new game. */
 
     document.getElementById("endgame").style.display = "none";
     document.getElementById("endgame").innerHTML = "";
